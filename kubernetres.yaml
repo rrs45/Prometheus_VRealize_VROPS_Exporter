@@ -1,0 +1,51 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: vrops-exporter01
+spec:
+  selector:
+    app: vrops-exporter01
+  ports:
+  - protocol: TCP
+    port: 8020
+    targetPort: 8020
+  type: ClusterIP
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: vrops-exporter01
+  labels:
+    app: vrops-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vrops-exporter01
+  template:
+    metadata:
+      labels:
+        app: vrops-exporter01
+    spec:
+      containers:
+      - name: vrops-exporter01
+        image: <<docker-image-url>>
+        securityContext:
+          privileged: false
+          capabilities:
+            drop:
+             - CHOWN
+             - DAC_OVERRIDE
+             - FOWNER
+             - FSETID
+             - SETUID
+             - SETGID
+             - SYS_CHROOT
+             - MKNOD
+        ports:
+        - containerPort: 8020
+      dnsPolicy: Default
+      imagePullSecrets: 
+      - name: regsecret
+      nodeSelector:
+        kubernetes.io/hostname: <<dedicated host>>
