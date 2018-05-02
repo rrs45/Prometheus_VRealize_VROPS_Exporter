@@ -7,14 +7,27 @@
  
   "datacenter":["dc1","dc2"],
  
-  "adapterKind":"VMware",
+"adapterKind":"VMware",
   "metrics": [
   		 
   		{
   		 "kind": "ClusterComputeResource",
   		 "keys": 
-  		  {"badge|health_state": "int"
-  		    }
+  		  {"cpu|demand|object.capacity": "int",
+  		   "cpu|demand|actual.capacity": "int",
+  		   "cpu|demand|capacityRemainingValue":"int",
+  		  "cpu|demand|capacityRemaining": "percent",
+  		  "cpu|alloc|capacityRemaining": "percent",
+  		  "cpu|alloc|capacityRemainingValue":"int",
+  		  "cpu|alloc|actual.capacity":"int",
+  		  "mem|alloc|capacityRemaining":"percent",
+  		  "mem|alloc|capacityRemainingValue":"int",
+  		  "mem|alloc|actual.capacity":"int",
+  		  "mem|demand|capacityRemaining":"percent",
+  		  "mem|demand|object.capacity": "int",
+  		  "mem|demand|actual.capacity":"int",
+  		  "mem|demand|capacityRemainingValue":"int"
+  		   }
   		  
   		}
   ]
