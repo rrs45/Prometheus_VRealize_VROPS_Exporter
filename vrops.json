@@ -1,0 +1,21 @@
+{
+ "server": {
+  "hostname": "ep9-vrealize.dco.elmae",
+  "user": "tesaract",
+  "pwd": "6pQVx!dSPd"
+  },
+ 
+  "datacenter":["Chicago","Santa Clara"],
+ 
+  "adapterKind":"VMware",
+  "metrics": [
+  		 
+  		{
+  		 "kind": "ClusterComputeResource",
+  		 "keys": 
+  		  {"badge|health_state": "int"
+  		    }
+  		  
+  		}
+  ]
+}
