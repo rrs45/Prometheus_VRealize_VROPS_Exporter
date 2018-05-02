@@ -11,7 +11,7 @@ metadata:
     ingress.kubernetes.io/auth-secret: "traefik-auth"
 spec:
   rules:
-  - host: <<Desicated host>>
+  - host: <<Dedicated host>>
     http:
       paths: 
       - path: /vrops-exporter01/
