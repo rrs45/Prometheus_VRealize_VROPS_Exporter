@@ -1,11 +1,11 @@
 {
  "server": {
-  "hostname": "ep9-vrealize.dco.elmae",
-  "user": "tesaract",
-  "pwd": "6pQVx!dSPd"
+  "hostname": "<<vROPS Host>>",
+  "user": "xxxx",
+  "pwd": "xxxxx"
   },
  
-  "datacenter":["Chicago","Santa Clara"],
+  "datacenter":["dc1","dc2"],
  
   "adapterKind":"VMware",
   "metrics": [
